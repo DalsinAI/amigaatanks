@@ -26,8 +26,14 @@
 # define ATANKS_IS_LINUX
 #endif // Linux
 
-#if !defined(ATANKS_IS_WINDOWS) && !defined(ATANKS_IS_LINUX) && !defined(ATANKS_IS_BSD)
-# error "Only Windows, Linux and BSD are supported at the moment"
+// GFOS / AmigaOS (68040, libnix, allegro4.library): settings and saved
+// games live in the game drawer's User drawer, see amiga/dirent_amiga.cpp
+#if defined(__amigaos__)
+# define ATANKS_IS_AMIGA
+#endif // GFOS
+
+#if !defined(ATANKS_IS_WINDOWS) && !defined(ATANKS_IS_LINUX) && !defined(ATANKS_IS_BSD) && !defined(ATANKS_IS_AMIGA)
+# error "Only Windows, Linux, BSD and AmigaOS are supported at the moment"
 #endif // Windows versus Linux
 
 

@@ -1,0 +1,16 @@
+{
+  "name": "AtomicTanks",
+  "version": "6.7-gfos1",
+  "drawer": "AtomicTanks",
+  "program": "AtomicTanks",
+  "cpu": "68040",
+  "fpu": false,
+  "space": 16000000,
+  "modules": [],
+  "keep": [
+    "User"
+  ],
+  "parent": "Work:Games",
+  "badge": "icons/art/atanks.png",
+  "script": "Install-AtomicTanks"
+}

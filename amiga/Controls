@@ -1,0 +1,22 @@
+Atomic Tanks: controls
+======================
+
+From the game's own README (ReadMe-AtomicTanks). The mouse works the
+menus and the buying screen too: left click buys, right click sells.
+
+  Space        fire; select or toggle a menu item
+  Return       OK on a menu
+  Up / Down    shot power; move through menu items; scroll when buying
+  Left / Right aim the gun; buy and sell when buying; change menu values
+  Tab or Backspace   change weapon
+  Esc          leave a menu
+  F1           screenshot
+  F10          the computer takes your tank for the rest of the round;
+               on the buying screen, saves the game
+  v / V        volume down / up
+  ~ (or #)     show or hide the scoreboard
+
+Settings and saved games go in the drawer's User drawer; screenshots
+(screenshot_001.bmp and on) go in the game's drawer.
+Put .bmp pictures in User/ for extra backgrounds and .wav files in
+User/music/ for music.

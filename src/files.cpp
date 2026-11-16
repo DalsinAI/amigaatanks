@@ -351,6 +351,15 @@ bool Copy_Config_File()
 	if (!access(dest_path, R_OK | W_OK))
 		return true;
 
+#if defined(ATANKS_IS_AMIGA)
+	// no home folder to copy from: just make sure User/ is there
+	int user_attrib = 0;
+	if (mkdir(env.configDir, 0700)
+	  && !(file_exists(env.configDir, FA_DIREC, &user_attrib) && (user_attrib & FA_DIREC)))
+		return false;
+	return true;
+#endif // ATANKS_IS_AMIGA
+
 	char*  my_home_folder = getenv(HOME_DIR);
 
 	// figure out where home is
@@ -746,7 +755,7 @@ On error, NULL is returned. If all goes well, a list of file names
 are returned.
 After use, the return value *must* be freed.
 */
-#if defined(ATANKS_IS_LINUX)
+#if defined(ATANKS_IS_LINUX) || defined(ATANKS_IS_AMIGA)
 dirent** Find_Saved_Games(uint32_t &num_files_found)
 {
 	dirent** my_list = nullptr;
@@ -832,7 +841,7 @@ char** Find_Bitmaps(int32_t* bitmaps_found)
 	one_file = readdir(game_dir);
 	while ( (one_file) && (file_count < 256) ) {
 		// check to see if this is a save game file
-#ifdef ATANKS_IS_LINUX
+#if defined(ATANKS_IS_LINUX) || defined(ATANKS_IS_AMIGA)
 		if ( strcasestr( one_file->d_name, ".bmp" ) ) {
 #else
 		if ( (strstr(one_file->d_name, ".bmp"))

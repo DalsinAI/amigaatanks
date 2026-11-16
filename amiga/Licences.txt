@@ -1,0 +1,21 @@
+Atomic Tanks: licences
+======================
+
+The game: Atomic Tanks 6.7, (c) Tom Hudson, Jesse Smith, Sven Eden and
+the others named in Data/credits.txt, from github.com/talregev/atanks
+(Jesse Smith's tree) at commit
+b9e3be3988a772bf7d5b6fa1d8811e98ca7f52ac.
+
+- The game, its code and data: GNU General Public License version 2 or
+  later (COPYING.txt). The port's changes to the code (src/) are under it
+  too; the source of this build is in DalsinAI/amigaatanks on GitHub.
+- Libs/allegro4.library (DalsinAI/gfopenallegro) and Libs/acgame.library
+  (DalsinAI/acgame): MIT, Copyright (c) 2026 AmiCradle Team. They are our
+  own Allegro 4 and game libraries, not Allegro's code.
+- The Amiga port's own files (amiga/, AMIGA_PORT.md, package/, tools/,
+  tests/) are GPL-2 or later like the game, except tools/lha_archive.py,
+  pack_dist.py and write_part.sh and tests/test_part.sh (MIT), Copyright
+  (c) 2026 AmiCradle Team. The GlowIcons are drawn from the game's own
+  icon (atanks.png).
+
+Designed, tested and delivered by The AmiCradle Team.

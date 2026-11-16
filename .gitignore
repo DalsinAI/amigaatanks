@@ -71,3 +71,7 @@ allegro.cfg
 # Screenshots
 screenshot_*.*
 Thumbs.db
+
+# Amiga build
+build/
+build-amiga-package/

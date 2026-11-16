@@ -154,6 +154,9 @@ using std::string;
 #  define HOME_DIR "AppData"
 #elif defined(ATANKS_IS_LINUX)
 #  define HOME_DIR "HOME"
+#elif defined(ATANKS_IS_AMIGA)
+#  define HOME_DIR "HOME"
+#  define AMIGA_CONFIG_DIR "User"
 #endif // Windows versus Linux
 
 #ifndef	DATA_DIR

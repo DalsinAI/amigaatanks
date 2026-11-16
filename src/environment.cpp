@@ -343,6 +343,14 @@ void ENVIRONMENT::find_config_dir()
 {
 	// If no config dir was given on the command line, try to find a valid one
 	if (!configDir[0]) {
+#if defined(ATANKS_IS_AMIGA)
+		// the game drawer (PROGDIR:, the current directory) holds User/
+		strncpy(configDir, AMIGA_CONFIG_DIR, PATH_MAX);
+		if (!Copy_Config_File())
+			cerr << "ERROR: Unable to create the " << AMIGA_CONFIG_DIR
+			     << " drawer." << endl;
+		return;
+#endif // ATANKS_IS_AMIGA
 		// figure out file name
 		char* homedir = getenv(HOME_DIR);
 		snprintf(configDir, PATH_MAX, "%s/.atanks", homedir ? homedir : ".");
